@@ -75,54 +75,42 @@ const App = () => {
         layout="vertical"
         autoComplete="off"
       >
-     
-          <Form.Item
-            name="prefix"
-            label="คำนำหน้า"
-            rules={[{ required: true }]}
-          >
-            <Select
-              placeholder="กรุณาเลือก"
-              optionFilterProp="children"
-              onChange={onChangeselect}
-              filterOption={(input, option) =>
-                (option?.label ?? "")
-                  .toLowerCase()
-                  .includes(input.toLowerCase())
-              }
-              options={[
-                {
-                  value: "นาย",
-                  label: "นาย",
-                },
-                {
-                  value: "นาง",
-                  label: "นาง",
-                },
-                {
-                  value: "นางสาว",
-                  label: "นางสาว",
-                },
-              ]}
-            />
-          </Form.Item>
+        <Form.Item name="prefix" label="คำนำหน้า" rules={[{ required: true }]}>
+          <Select
+            placeholder="กรุณาเลือก"
+            optionFilterProp="children"
+            onChange={onChangeselect}
+            filterOption={(input, option) =>
+              (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+            }
+            options={[
+              {
+                value: "นาย",
+                label: "นาย",
+              },
+              {
+                value: "นาง",
+                label: "นาง",
+              },
+              {
+                value: "นางสาว",
+                label: "นางสาว",
+              },
+            ]}
+          />
+        </Form.Item>
 
-          <Form.Item
-            name="firstname"
-            label="ชื่อจริง"
-            rules={[{ required: true }]}
-          >
-            <Input />
-          </Form.Item>
+        <Form.Item
+          name="firstname"
+          label="ชื่อจริง"
+          rules={[{ required: true }]}
+        >
+          <Input />
+        </Form.Item>
 
-          <Form.Item
-            name="lastname"
-            label="นามสกุล"
-            rules={[{ required: true }]}
-          >
-            <Input />
-          </Form.Item>
-
+        <Form.Item name="lastname" label="นามสกุล" rules={[{ required: true }]}>
+          <Input />
+        </Form.Item>
 
         <br />
 
@@ -159,6 +147,10 @@ const App = () => {
               },
             ]}
           />
+        </Form.Item>
+
+        <Form.Item name="thainumber" label="เลขบัตรประชาชน">
+          <Input />
         </Form.Item>
 
         <Form.Item name="gender" label="เพศ" rules={[{ required: true }]}>
