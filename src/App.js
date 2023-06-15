@@ -59,16 +59,6 @@ const App = () => {
     setValue(e.target.value);
   };
 
-  const prefixgender = (
-    <Form.Item name="prefixgender" noStyle>
-      <Select style={{ width: 100}}>
-        <Option value="นาย">นาย</Option>
-        <Option value="นาง">นาง</Option>
-        <Option value="นางสาว">นางสาว</Option>
-      </Select>
-    </Form.Item>
-  );
-
   const prefixSelector = (
     <Form.Item name="prefixSelector" noStyle>
       <Select style={{ width: 70 }}>
@@ -78,49 +68,63 @@ const App = () => {
   );
 
   return (
-    <div className="App-header">
+    <div className="App">
       <Form
         form={form}
         name="validateOnly"
         layout="vertical"
         autoComplete="off"
       >
-        <Form.Item name="prefix" label="คำนำหน้า" rules={[{ required: true }]}>
-          <Select
-            placeholder="กรุณาเลือก"
-            optionFilterProp="children"
-            onChange={onChangeselect}
-            filterOption={(input, option) =>
-              (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
-            }
-            options={[
-              {
-                value: "นาย",
-                label: "นาย",
-              },
-              {
-                value: "นาง",
-                label: "นาง",
-              },
-              {
-                value: "นางสาว",
-                label: "นางสาว",
-              },
-            ]}
-          />
-        </Form.Item>
+     
+          <Form.Item
+            name="prefix"
+            label="คำนำหน้า"
+            rules={[{ required: true }]}
+          >
+            <Select
+              placeholder="กรุณาเลือก"
+              optionFilterProp="children"
+              onChange={onChangeselect}
+              filterOption={(input, option) =>
+                (option?.label ?? "")
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              options={[
+                {
+                  value: "นาย",
+                  label: "นาย",
+                },
+                {
+                  value: "นาง",
+                  label: "นาง",
+                },
+                {
+                  value: "นางสาว",
+                  label: "นางสาว",
+                },
+              ]}
+            />
+          </Form.Item>
 
-        <Form.Item
-          name="firstname"
-          label="ชื่อจริง"
-          rules={[{ required: true }]}
-        >
-          <Input />
-        </Form.Item>
+          <Form.Item
+            name="firstname"
+            label="ชื่อจริง"
+            rules={[{ required: true }]}
+          >
+            <Input />
+          </Form.Item>
 
-        <Form.Item name="lastname" label="นามสกุล" rules={[{ required: true }]}>
-          <Input />
-        </Form.Item>
+          <Form.Item
+            name="lastname"
+            label="นามสกุล"
+            rules={[{ required: true }]}
+          >
+            <Input />
+          </Form.Item>
+
+
+        <br />
 
         <Form.Item name="birthday" label="วันเกิด" rules={[{ required: true }]}>
           <DatePicker placeholder="กรุณาเลือก" onChange={onChange} />

@@ -1,5 +1,11 @@
 .App {
-  text-align: center;
+  background-image: linear-gradient(to right, green, orange);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+
 }
 
 .App-logo {
@@ -14,7 +20,6 @@
 }
 
 .App-header {
-  background-image: linear-gradient(to right, green, orange);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +40,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.site-space-compact-wrapper .site-input-split {
+  background-image: linear-gradient(to right, green, orange);
 }
