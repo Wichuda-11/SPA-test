@@ -18,13 +18,6 @@ const onChange: DatePickerProps["onChange"] = (date, dateString) => {
   console.log(date, dateString);
 };
 
-//คำนำหน้า
-const prefix = [
-  { label: "นาย", value: "นาย" },
-  { label: "นาง", value: "นาง" },
-  { label: "นางสาว", value: "นางสาว" },
-];
-
 //ปุ่ม ส่งข้อมูล
 const SubmitButton = ({ form }: { form: FormInstance }) => {
   const [submittable, setSubmittable] = React.useState(false);
